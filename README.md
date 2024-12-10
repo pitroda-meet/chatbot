@@ -28,7 +28,7 @@ streamlit run src/main.py
 
 >Local URL: http://localhost:8501
 
->Network URL: http://172.20.10.4:8501
+>host URL: https://chatbotgit-i4o6rlvpwqupc9snadv46b.streamlit.app/
 
 <p align="center">
 <img src="./input/blendddd.png"  width="600" height="397">

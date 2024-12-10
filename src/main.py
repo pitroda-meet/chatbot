@@ -3,7 +3,8 @@ from streamlit_chat import message as st_message
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 
-@st.experimental_singleton
+# Replace deprecated `st.experimental_singleton` with `st.cache_resource`
+@st.cache_resource
 def get_models():
     # Load the model and the tokenizer
     tokenizer = AutoTokenizer.from_pretrained("facebook/blenderbot_small-90M")
@@ -27,7 +28,7 @@ def generate_answer():
     result = model.generate(**inputs)
     message_bot = tokenizer.decode(
         result[0], skip_special_tokens=True
-    )   # decode the result to a string
+    )  # decode the result to a string
 
     st.session_state.history.append({"message": user_message, "is_user": True})
     st.session_state.history.append({"message": message_bot, "is_user": False})
